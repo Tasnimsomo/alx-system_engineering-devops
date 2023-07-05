@@ -1,2 +1,0 @@
-#!/bin/bash
-ls -Ap1 | sort -df | sed ':a;N;$!ba;s/\n/, /g' | sed 's/,$/\n/'
