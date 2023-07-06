@@ -1,3 +1,4 @@
 #!/bin/bash
 if [ $(stat -c '%U' ./) = guillaume ] then sudo chown betty ./ fi
    
+   
