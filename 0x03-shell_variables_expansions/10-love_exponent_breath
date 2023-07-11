@@ -1,2 +1,2 @@
 #!/bin/bash
-echo '$(expr $BREATHE^$LOVE)
+echo '$(expr $BREATH^$LOVE)'
