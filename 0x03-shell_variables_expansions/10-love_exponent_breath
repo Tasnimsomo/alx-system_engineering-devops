@@ -1,3 +1,2 @@
 #!/bin/bash
-echo $(expr "$BREATH^$LOVE")
-
+echo $("$POWER^$LOVE")
