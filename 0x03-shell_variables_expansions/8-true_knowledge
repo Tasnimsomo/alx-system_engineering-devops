@@ -1,2 +1,2 @@
 #!/bin/bash
-result =$(expr 128 + $TRUEKNOWLEDGE)
+echo $(expr 128 + $TRUEKNOWLEDGE)
