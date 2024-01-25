@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Read and cut /etc/passwd
+
+exec 3< /etc/passwd
+
+while IFS=: read -r username uid _gid _gecos homedir _shell <&3; do
+	echo "$username:$uid: $homedir"
+done
+
+exec 3<&-

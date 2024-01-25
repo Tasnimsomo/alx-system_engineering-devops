@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#fizz buzz
+
+i=1
+while [ $i 
