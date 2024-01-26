@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+printf "%-8s %-20s %-15s %-10s %-10s %s\n" "PID" "COMMAND" "USER" "%CPU" "%MEM" "PPID"
+
+ps axo pid,comm,user,%cpu,%mem,ppid --forest | tail -n +2 | awk '{printf "%-8s %-20s %-15s %-10s %-10s %s\n", $1, $2, $3, $4, $5, $6}'
