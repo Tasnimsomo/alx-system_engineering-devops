@@ -1,0 +1,4 @@
+#!/bin/bash
+
+script_pid=$$
+echo "The process ID of this script is: $script_pid"
