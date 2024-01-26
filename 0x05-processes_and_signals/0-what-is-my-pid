@@ -1,4 +1,4 @@
 #!/bin/bash
 
 script_pid=$$
-echo "$script_pid"
+echo $script_pid
