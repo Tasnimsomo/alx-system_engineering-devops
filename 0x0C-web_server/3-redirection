@@ -1,21 +1,10 @@
 #!/usr/bin/env bash
 # Script to configure a new Ubuntu machine to meet specified requirements
 
-# Update package lists and install Nginx
 sudo apt-get update
 sudo apt-get install -y nginx
-
-# Create a simple index.html for testing
 echo "Hello World!" | sudo tee /var/www/html/index.html >/dev/null
-
-# Define the string for replacement in Nginx configuration
-string_for_replacement="location /redirect_me {\n\treturn 301 https:\/\/www.example.com/new_page;\n}"
-
-# Use sed to replace the appropriate section in the default Nginx configuration file
+string_for_replacement="location /redirect_me {\n\treturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4
 sudo sed -i "/server_name _;/a $string_for_replacement" /etc/nginx/sites-enabled/default
-
-# Restart Nginx to apply the changes
 sudo service nginx restart
-
 echo "Configuration completed."
-
