@@ -12,7 +12,7 @@ sudo sed -i "s/127.0.1.1.*/127.0.1.1\tweb-02/g" /etc/hosts
 sudo apt install nginx -y
 
 # Configure Nginx
-sudo tee /etc/nginx/conf.d/custom.conf > /dev/null <<EOF
+sudo tee /etc/nginx/sites-available/default > /dev/null <<EOF
 server {
    listen 80 default_server;
    listen [::]:80 default_server;
@@ -26,6 +26,9 @@ server {
    }
 }
 EOF
+
+# Enable the new configuration
+sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
 
 # Restart Nginx
 sudo systemctl restart nginx
