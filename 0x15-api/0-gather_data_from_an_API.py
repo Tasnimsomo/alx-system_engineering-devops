@@ -21,7 +21,6 @@ if __name__ == "__main__":
     completed_tasks = sum(1 for task in todos_data if task['completed'])
     completed_tasks_titles = [task['title']
                               for task in todos_data if task['completed']]
-
     print("Employee {} is done with tasks ({}/{}):".format(
         user_data['name'], completed_tasks, total_tasks))
     for task_title in completed_tasks_titles:

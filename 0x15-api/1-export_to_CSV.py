@@ -24,10 +24,10 @@ if __name__ == "__main__":
         for task in todos_data:
             writer.writerow([task['userId'],
                              user_data['username'],
-                task['completed'],
-                task['title']])
+                             task['completed'],
+                             task['title']])
 
     print(
         "Tasks owned by employee {} have been saved to {}.".format(
-        user_data['username'],
-        filename))
+            user_data['username'],
+            filename))
