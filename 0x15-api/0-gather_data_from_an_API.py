@@ -1,10 +1,15 @@
+#!/usr/bin/python3
+""" Gather data from an API """
+
 import requests
 import sys
 
 if __name__ == "__main__":
     employee_id = sys.argv[1]
-    user_url = "https://jsonplaceholder.typicode.com/users/{}".format(employee_id)
-    todos_url = "https://jsonplaceholder.typicode.com/todos?userId={}".format(employee_id)
+    user_url = "https://jsonplaceholder.typicode.com/users/{}".format(
+        employee_id)
+    todos_url = "https://jsonplaceholder.typicode.com/todos?userId={}".format(
+        employee_id)
 
     user_response = requests.get(user_url)
     todos_response = requests.get(todos_url)
@@ -14,8 +19,10 @@ if __name__ == "__main__":
 
     total_tasks = len(todos_data)
     completed_tasks = sum(1 for task in todos_data if task['completed'])
-    completed_tasks_titles = [task['title'] for task in todos_data if task['completed']]
+    completed_tasks_titles = [task['title']
+                              for task in todos_data if task['completed']]
 
-    print("Employee {} is done with tasks ({}/{}):".format(user_data['name'], completed_tasks, total_tasks))
-    for index, task_title in enumerate(completed_tasks_titles, start=1):
-        print("Task {} Formatting: OK".format(index))
+    print("Employee {} is done with tasks ({}/{}):".format(
+        user_data['name'], completed_tasks, total_tasks))
+    for task_title in completed_tasks_titles:
+        print("\t{}".format(task_title))
