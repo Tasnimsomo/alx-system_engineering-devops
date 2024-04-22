@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Gather data from an API """
+"""1. Export to CSV"""
 import csv
 import requests
 import sys
@@ -18,7 +18,7 @@ if __name__ == "__main__":
     todos_data = todos_response.json()
     filename = "{}.csv".format(employee_id)
     with open(filename, mode='w', newline='') as file:
-        writer = csv.writer(file)
+        writer = csv.writer(file, quoting=csv.QUOTE_ALL)  # Add this parameter
         writer.writerow(
             ["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS", "TASK_TITLE"])
         for task in todos_data:
