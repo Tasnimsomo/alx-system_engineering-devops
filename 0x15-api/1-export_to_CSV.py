@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""1. Export to CSV"""
+"""Extend your Python script to export data in the CSV format"""
+
 import csv
 import requests
 import sys
@@ -28,5 +29,6 @@ if __name__ == "__main__":
                              task['title']])
 
     print(
-        "Tasks written to CSV for employee {}.".format(
-            user_data['username']))
+        "Number of tasks written to CSV for employee {} is {}.".format(
+            user_data['username'],
+            len(todos_data)))
