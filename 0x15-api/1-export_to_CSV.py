@@ -28,6 +28,6 @@ if __name__ == "__main__":
                              task['title']])
 
     print(
-        "Tasks owned by employee {} have been saved to {}.".format(
+        "Number of tasks written to CSV for employee {} is {}.".format(
             user_data['username'],
-            filename))
+            len(todos_data)))
