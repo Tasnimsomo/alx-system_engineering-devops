@@ -26,3 +26,4 @@ if __name__ == "__main__":
         user_data['name'], completed_tasks, total_tasks))
     for task_title in completed_tasks_titles:
         print("\t{}".format(task_title))
+
