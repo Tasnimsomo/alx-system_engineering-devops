@@ -11,12 +11,11 @@ def top_ten(subreddit):
     if response.status_code != 200:
         print('None')
         return
-    response_json = response.json()
 
     try:
-        posts = response_json['data']['children']
+        posts = response.json()['data']['children']
         for post in posts:
             title = post['data']['title']
             print(title)
-    except Exception:
+    except KeyError:
         print("None")
