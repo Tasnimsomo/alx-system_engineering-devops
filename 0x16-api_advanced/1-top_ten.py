@@ -2,6 +2,7 @@
 """
 prints the titles of the first 10 hot posts listed for a given subreddit
 """
+
 import requests
 
 
@@ -14,7 +15,7 @@ def top_ten(subreddit):
             print('None')
             return
     
-        posts = response.json()['data']['children']
+        posts = response.json().get('data').get('children')
         for post in posts:
             title = post['data']['title']
             print(title)
