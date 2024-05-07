@@ -22,4 +22,4 @@ def top_ten(subreddit):
         else:
             print("None")
     except Exception:
-        print("None")usr/bin/python3
+        print("None")
