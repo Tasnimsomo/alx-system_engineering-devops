@@ -13,10 +13,10 @@ def top_ten(subreddit):
         return
     response_json = response.json()
 
-    if 'data' not in response_json or 'children' not in response_json['data']:
-        print('None')
-        return
-    posts = response_json['data']['children']
-    for post in posts:
-        title = post['data']['title']
-        print(title)
+    try:
+        posts = response_json['data']['children']
+        for post in posts:
+            title = post['data']['title']
+            print(title)
+    except Exception:
+        print("None")
