@@ -1,4 +1,4 @@
-trace is your frienid
+# 0. Strace is your frienid
 # Fixes Apache 500 error
 
 exec { 'fix-wordpress':
